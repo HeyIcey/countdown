@@ -183,10 +183,12 @@
 
 	    function getCurrentShowTimeSeconds(){
 	    	var curTime = new Date();
-	    	var ret = endTime.getTime() - curTime.getTime();
-	    	ret = Math.round(ret/1000);
+	    	// var ret = endTime.getTime() - curTime.getTime();
+	    	var ret = curTime.getHours()*3600 + curTime.getMinutes()*60 +curTime.getSeconds();
 
-	    	return ret>=0?ret:0;
+	    	// ret = Math.round(ret/1000);
+	    	// return ret>=0?ret:0;
+	    	return ret;
 	    }
 
 	    function render(ctx){
